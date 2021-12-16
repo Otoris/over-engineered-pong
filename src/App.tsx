@@ -75,28 +75,7 @@ function App() {
       //       ballDY: ballState.ballDY < 0 ? -getRandomInt(10, 150) : getRandomInt(10, 150),
       //       collision: true
       //     });
-      if (ballState.ballY < 0) {
-        setBallState({
-          ...ballState,
-          ballY: 0,
-          ballDY: -ballState.ballDY,
-        });
-      } else if (
-        arena.current &&
-        ballState.ballY > arena.current.offsetHeight - ballHeight
-      ) {
-        setBallState({
-          ...ballState,
-          ballY: arena.current.offsetHeight - ballHeight,
-          ballDY: -ballState.ballDY,
-        });
-      } else {
-        setBallState({
-          ...ballState,
-          ballX: Math.floor(ballState.ballX + ballState.ballDX * dt),
-          ballY: Math.floor(ballState.ballY + ballState.ballDY * dt),
-        });
-      }
+      
     }
 
     // if (opponent.current && pong.current) {
